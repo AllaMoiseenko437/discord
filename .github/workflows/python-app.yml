@@ -44,7 +44,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest config.py backend.py login_action.py frontend.py --alluredir=allure-result
+        pytest backend.py login_action.py frontend.py --alluredir=allure-result
       continue-on-error: true
 
 
