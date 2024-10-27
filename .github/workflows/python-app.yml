@@ -32,7 +32,7 @@ jobs:
         
     - name: Use API Key
       run: |
-        echo "Using API Key: ${{ secrets.apiKey }}
+        echo "Using API Key: ${{ secrets.apiKey }}"
 
         
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
