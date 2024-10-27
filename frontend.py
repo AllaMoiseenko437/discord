@@ -5,7 +5,10 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 from login_action import initialize_driver, login
 
+chrome_options = Options()
+chrome_options.add_argument("--headless")  # Запуск в фоновом режиме
 
+driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 @pytest.fixture
 def setup():
