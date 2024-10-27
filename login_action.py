@@ -4,13 +4,16 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
 
-def initialize_driver() :
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+def initialize_driver():
+    chrome_options = Options()
+    chrome_options.add_argument("--headless")
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
     driver.get("https://discord.com/login")
     return driver
-
 
 def login(driver, email, password) :
     driver.implicitly_wait(10)
